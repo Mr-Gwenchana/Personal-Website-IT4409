@@ -48,10 +48,8 @@ body {
 
 /* Theme Switch */
 .theme-switch-wrapper {
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    z-index: 100;
+    display: flex;
+    align-items: center;
 }
 .theme-switch {
     display: inline-block;
@@ -495,4 +493,249 @@ h1 {
         padding: 14px 28px;
         font-size: 0.95rem;
     }
+}
+
+/* Top Controls */
+.top-controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.nav-btn {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+    background: var(--btn-bg);
+    border: 1px solid var(--btn-border);
+    padding: 10px 20px;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--btn-hover-bg);
+    border-color: var(--accent-1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+    color: var(--accent-1);
+}
+
+/* Override existing theme-switch wrapper since it's now in top-controls */
+.theme-switch-wrapper {
+    position: static;
+}
+
+/* Register Section */
+.register-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    background-image: var(--bg-texture);
+    transition: background-color 0.5s ease;
+    padding: 100px 20px 40px;
+}
+
+.register-container {
+    background: var(--btn-bg);
+    border: 1px solid var(--btn-border);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+}
+
+.register-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.form-group input, .form-group select {
+    font-family: 'Montserrat', sans-serif;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid var(--btn-border);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+[data-theme="light"] .form-group input, [data-theme="light"] .form-group select {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--accent-1);
+    box-shadow: 0 0 0 2px rgba(var(--accent-1-rgb), 0.2);
+}
+
+.form-group option {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+}
+
+.submit-btn {
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--bg-color);
+    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    filter: brightness(1.1);
+}
+
+/* Gender Options Styling */
+.gender-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.gender-option {
+    flex: 1;
+    position: relative;
+}
+
+.gender-option input[type="radio"] {
+    display: none;
+}
+
+.gender-option label {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    text-align: center;
+    border: 1px solid var(--btn-border);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: normal;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+[data-theme="light"] .gender-option label {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+.gender-option input[type="radio"]:checked + label {
+    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
+    color: var(--bg-color);
+    border-color: transparent;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+    font-weight: 600;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    transform: translateY(50px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--text-primary);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+    color: var(--accent-1);
+}
+
+/* Custom Scrollbar for modal content */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--accent-1);
+    border-radius: 4px;
 }

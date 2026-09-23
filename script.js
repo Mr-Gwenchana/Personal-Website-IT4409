@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+﻿document.addEventListener("DOMContentLoaded", () => {
     // Theme Switch Logic
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
     const currentTheme = localStorage.getItem('theme');
@@ -131,4 +131,36 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }
     });
+});
+
+// Navigation & Modal Logic
+document.addEventListener('DOMContentLoaded', () => {
+    const btnDetails = document.getElementById('btn-details');
+    const btnHobbies = document.getElementById('btn-hobbies');
+    const btnSubscribe = document.getElementById('btn-subscribe');
+    const modal = document.getElementById('register-modal');
+    const closeModal = document.getElementById('close-modal');
+    const registerForm = document.getElementById('registerForm');
+
+    // Smooth scroll to sections
+    if (btnDetails) {
+        btnDetails.addEventListener('click', (e) => {
+            e.preventDefault();
+            const detailsSection = document.querySelector('.details-section');
+            if (detailsSection) {
+                detailsSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
+    if (btnHobbies) {
+        btnHobbies.addEventListener('click', (e) => {
+            e.preventDefault();
+            const finalSection = document.querySelector('.final-section');
+            if (finalSection) {
+                finalSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
 });
