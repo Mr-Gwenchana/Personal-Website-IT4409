@@ -1,4 +1,4 @@
-/* Website template by freewebsitetemplates.com */
+﻿/* Website template by freewebsitetemplates.com */
 @font-face {
 	font-family: 'PTSerif-Caption';
 	src: url('../fonts/PT_Serif-Caption-Web-Regular.eot');
@@ -31,7 +31,7 @@ img {
 .btn, .btn2, #searchbar form input.txtfield, #navigation li, #navigation li a:hover, #navigation li.selected a {
 	background: url(../images/interface.png) no-repeat;
 }
-#navigation, #navigation > div, #navigation ul {
+#navigation, #navigation > div, #navigation > section, #navigation > section, #navigation ul {
 	background-image: url(../images/bg-navigation.png);
 	background-repeat: no-repeat;
 }
@@ -200,7 +200,7 @@ a.sitename {
 	margin: 0 24px 0 12px;
 	padding: 12px 12px 22px;
 }
-#main div.body {
+#main div.body, #main article.body, #main section.body {
 	padding: 0 30px;
 }
 /** list **/
@@ -251,7 +251,7 @@ a.sitename {
 #gallery {
 	margin: 0 0 36px;
 }
-#gallery > div {
+#gallery > div, #gallery > figure {
 	margin: 0 0 14px;
 }
 #gallery ul {
@@ -280,7 +280,7 @@ a.sitename {
 	width: 229px;
 	margin-left: 5px;
 }
-#sidebar div.section {
+#sidebar div.section, #sidebar section.section {
 	background: url(../images/box-shadow-bottom.png) no-repeat left bottom;
 	margin: 0 0 24px;
 	padding: 0 0 6px;
@@ -291,7 +291,7 @@ a.sitename {
 	margin: 0 0 16px;
 	padding: 0 0 8px;
 }
-#navigation > div {
+#navigation > div, #navigation > section {
 	background-position: 0 top;
 	padding: 8px 0 0;
 }
@@ -410,7 +410,7 @@ a.sitename {
 	position: absolute;
 	left: 0;
 }
-#footer > div {
+#footer > div, #footer > section {
 	width: 960px;
 	margin: 0 auto;
 }
